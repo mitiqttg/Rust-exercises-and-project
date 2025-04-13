@@ -13,7 +13,7 @@ This is my final project for the course `Rust - Modern and Emerging Programming 
 * **Clone or Download the Project:**
     * **Using Git:** Open your terminal or command prompt and navigate to the directory where you want to save the project, then run:
         ```bash
-        git clone https://github.com/mitiqttg/Rust-exercises-and-project.git your-folder-name
+        git clone https://github.com/mitiqttg/Rust-game-project.git your-folder-name
         ```
     * **Downloading as ZIP:** Alternatively, if you downloaded the project as a ZIP file, extract its contents to a directory on your computer.
 
