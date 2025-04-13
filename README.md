@@ -35,7 +35,7 @@ This is my final project for the course `Rust - Modern and Emerging Programming 
 
 **Step 2: Enjoying the game**
 
-* **Terminal Output:** The game is a terminal-based application. Ensure your terminal window is sufficiently sized to display the game field clearly. You might need to adjust your terminal's font size or window dimensions for the best experience.
+* **Terminal Output:** The game is a terminal-based application (in my case, I'm running on VScode terminal). Ensure your terminal window is sufficiently sized to display the game field clearly. You might need to adjust your terminal's font size or window dimensions for the best experience.
 
 * **Controls:**
     * `Up Arrow`: Accelerate your player 
