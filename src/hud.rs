@@ -1,7 +1,7 @@
 use crate::{
     point::Point2d, 
     traits::Position,
-    unit::Player  // Add this import
+    unit::Player
 };
 use crossterm::{
     cursor::MoveTo,

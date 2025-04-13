@@ -4,10 +4,7 @@ use crate::{
     unit::{Collectible, Enemy, Player, Wall},
 };
 use std::{fmt::Display, io::Write};
-
-use crossterm::{
-    style::{ Stylize},
-};
+use crossterm::{style::{ Stylize},};
 use num::{traits::NumAssign, NumCast};
 
 impl Display for Collectible {
@@ -24,7 +21,7 @@ impl Display for Wall {
 
 impl Display for Enemy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}", '👾'.red())
+        write!(f, "{}", '👾')
     }
 }
 

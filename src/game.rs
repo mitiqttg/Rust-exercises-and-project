@@ -151,8 +151,8 @@ impl Game {
             self.walls.push(wall);
         }
 
-        // randomize enemy positions
-        self.enemies.clear(); // Ensure enemies are cleared before re-generating
+        // Ensure enemies are cleared before re-generating
+        self.enemies.clear();
         self.enemies.extend(
             (1..12) 
                 .map(|i| Enemy::with_speed(i as f64 * 0.05))

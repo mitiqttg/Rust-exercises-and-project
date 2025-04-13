@@ -17,7 +17,7 @@ This is my final recap project for the course `Rust - Modern and Emerging Progra
         ```
     * **Downloading as ZIP:** Alternatively, if you downloaded the project as a ZIP file, extract its contents to a directory on your computer.
 
-* **Download Dependencies:** Navigate to the project directory in your terminal or command prompt:
+* **Download Dependencies:** Navigate to the project directory in your terminal or command prompt, make sure it contain `Cargo.toml` file ():
     ```bash
     cd your-folder-name
     ```

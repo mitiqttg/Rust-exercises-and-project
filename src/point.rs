@@ -1,5 +1,5 @@
-use std::ops::{Add, AddAssign, Mul, Sub};
 use num::{self, traits::NumAssign, Float, Zero};
+use std::ops::{Add, AddAssign, Mul, Sub};
 
 #[derive(Debug, Clone, Copy, PartialEq, Default)]
 pub struct Point2d<T: NumAssign> {
