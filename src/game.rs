@@ -103,7 +103,7 @@ impl GameBuilder {
     }
 
     pub fn build(self) -> Game {
-        let player_builder = self.player_builder.clone(); // Clone the builder
+        let player_builder = self.player_builder.clone();
         Game {
             height: self.height,
             width: self.width,
@@ -112,8 +112,8 @@ impl GameBuilder {
             enemies: self.enemies,
             walls: self.walls,
             collectible: Collectible::default(),
-            player: self.player_builder.build(), // This consumes the original
-            player_builder, // Use the clone here
+            player: self.player_builder.build(),
+            player_builder,
             ui: UI::new(),
             rng: rand::rngs::ThreadRng::default(),
             stdout: stdout(),
@@ -144,7 +144,7 @@ impl Game {
             self.walls.push(Wall::new(self.width - 1, y));
         }
 
-        // add random walls
+        // Add random walls
         for _ in 0..self.n_random_walls {
             let mut wall = Wall::default();
             wall.set_rand_position(&mut self.rng, 1..self.width - 1, 1..self.height - 1);
@@ -166,8 +166,8 @@ impl Game {
             );
         });
 
-        // randomize collectible position
-        self.collectible = Collectible::default(); // Reset the collectible
+        // Randomize collectible position
+        self.collectible = Collectible::default();
         while self
             .walls
             .iter()
@@ -182,7 +182,7 @@ impl Game {
     }
 
     fn update(&mut self) {
-        // move player if not colliding with a wall
+        // Move player if not colliding with a wall
         let player_next_position = self.player.forward_position();
         if !self
             .walls
@@ -192,10 +192,10 @@ impl Game {
             self.player.move_forward();
         }
 
-        // increase score if player collides with collectible
+        // Increase score if player collides with collectible
         if self.player.position().round().to_u16() == self.collectible.position() {
             self.score += 1;
-            // move collectible to a new random position
+            // Move collectible to a new random position
             self.collectible.set_rand_position(
                 &mut self.rng,
                 1..self.width - 1,
@@ -214,12 +214,12 @@ impl Game {
             }
         }
 
-        // move enemies
+        // Move enemies
         self.enemies
             .iter_mut()
             .for_each(|enemy| enemy.move_towards_player(&self.player));
 
-        // reduce player health for each enemy collision
+        // Reduce player health for each enemy collision
         self.enemies.iter_mut().for_each(|enemy| {
             if enemy.position().round() == self.player.position().round() {
                 self.player.take_damage(1);
@@ -245,18 +245,20 @@ impl Game {
             crossterm::style::Print("─".repeat(self.width as usize))
         ).unwrap();
 
-        // Ensure the HUD's y_position is set correctly relative to the separator
+        // Ensure the HUD's y_position is set relative to the separator
         let hud_y = separator_y + 1;
         Hud::new(self.score, &self.player, hud_y).draw(&mut buffer);
 
         self.stdout.write_all(&buffer).expect("write failed");
         self.stdout.flush().expect("flush failed");
     }
+    
+    // Regenerate walls, enemies, and collectible
     pub fn reset(&mut self) {
         self.score = 0;
-        self.player = self.player_builder.clone().build(); // Clone and build player
+        self.player = self.player_builder.clone().build();
         self.rng = rand::rngs::ThreadRng::default();
-        self.init(); // Call init to regenerate walls, enemies, and collectible
+        self.init(); 
     }
 
     pub fn run(&mut self) {

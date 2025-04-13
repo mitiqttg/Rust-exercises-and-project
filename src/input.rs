@@ -1,8 +1,7 @@
 use std::time::Duration;
-
+use crate::unit::Player;
 use crossterm::event::{poll, Event, KeyCode, KeyEvent, KeyModifiers, KeyEventKind};
 
-use crate::unit::Player;
 
 pub fn poll_key_event(duration: Duration) -> Option<KeyEvent> {
     if poll(duration).ok()? {
