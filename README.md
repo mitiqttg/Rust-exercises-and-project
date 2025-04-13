@@ -1,6 +1,6 @@
 # My Final Recap Project - Modern and Emerging Programming Language
 
-This is my final recap project for the course `Rust - Modern and Emerging Programming Language` at [https://fitech101.aalto.fi](https://fitech101.aalto.fi)
+This is my final project for the course `Rust - Modern and Emerging Programming Language`
 ![Gameplay Demo](rust_rush_game.gif)
 **Game idea:** A player (represented by a yellow arrow) navigates a field, collecting hearts to increase their health points while dodging relentless aliens (represented by cute purple octopuses).
 
